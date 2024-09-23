@@ -1,0 +1,8 @@
+image:
+  repository: docker.io/waydar2024/swp
+  pullPolicy: IfNotPresent
+  tag: "latest"
+
+service:
+  type: ClusterIP
+  port: 8089
