@@ -9,4 +9,10 @@ service:
 
 serviceAccount:
   create: true  
-  name: "swp-service-account"  
+  name: "swp-service-account"
+
+ingress:
+  enabled: true
+  annotations: {}
+  hosts:
+    - host: chart-example.local
