@@ -2,11 +2,8 @@ apiVersion: v2
 name: swp-chart
 description: A Helm chart for Kubernetes
 
-# Chart tipi: 'application' ya da 'library' olabilir
 type: application
 
-# Chart sürümü - Semantic Versioning kullanarak sürüm belirtmelisiniz
 version: 0.1.0
 
-# Uygulama sürümü (image versiyonu, Docker tag vb. olabilir)
 appVersion: "1.16.0"
