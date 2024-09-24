@@ -11,6 +11,9 @@ serviceAccount:
   create: true  
   name: "swp-service-account"
 
+rbac:
+  create: true
+
 autoscaling:
   enabled: false
   minReplicas: 1
