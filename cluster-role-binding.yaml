@@ -9,4 +9,4 @@ roleRef:
 subjects:
 - kind: ServiceAccount
   name: swp-service-account
-  namespace: argocd
+  namespace: kube-system
