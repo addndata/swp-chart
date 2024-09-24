@@ -5,23 +5,28 @@ image:
 
 service:
   type: ClusterIP
-  port: 8090
+  port: 8089
 
 serviceAccount:
   create: true  
   name: "swp-service-account"
 
-rbac:
-  create: true
-
 autoscaling:
-  enabled: false
+  enabled: false  # Otomatik ölçeklendirmeyi aktif etmek için true yapabilirsiniz
   minReplicas: 1
   maxReplicas: 10
   targetCPUUtilizationPercentage: 80
 
+resources:
+  limits:
+    cpu: 100m
+    memory: 128Mi
+  requests:
+    cpu: 50m
+    memory: 64Mi
+
 ingress:
-  enabled: false
+  enabled: false  # Ingress kullanmak istiyorsanız true yapabilirsiniz
   annotations: {}
   hosts:
     - host: chart-example.local
@@ -29,14 +34,6 @@ ingress:
         - path: /
           pathType: ImplementationSpecific
   tls: []
-
-resources:
-  limits:
-    cpu: 100m
-    memory: 128Mi
-  requests:
-    cpu: 100m
-    memory: 128Mi
 
 nodeSelector: {}
 tolerations: []
