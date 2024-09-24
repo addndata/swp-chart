@@ -1,12 +1,12 @@
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
-  name: swp-cluster-role-binding
+  name: swp-admin-binding
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: cluster-admin
 subjects:
   - kind: ServiceAccount
-    name: default
-    namespace: kube-system
-roleRef:
-  kind: ClusterRole
-  name: swp-cluster-role
-  apiGroup: rbac.authorization.k8s.io
+    name: swp-service-account
+    namespace: argocd
